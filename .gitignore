@@ -1,0 +1,5 @@
+# Each app keeps its own ignore file; this one covers the root.
+.DS_Store
+*.log
+.env
+.env.*
