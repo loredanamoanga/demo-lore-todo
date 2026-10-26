@@ -243,6 +243,10 @@
 							<destFile>${project.build.directory}/jacoco-merged.exec</destFile>
 							<dataFile>${project.build.directory}/jacoco-merged.exec</dataFile>
 							<outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
+							<!-- The entry point holds wiring and no logic; it is exempt from the coverage rule. -->
+							<excludes>
+								<exclude>**/*Application.class</exclude>
+							</excludes>
 						</configuration>
 					</execution>
 				</executions>

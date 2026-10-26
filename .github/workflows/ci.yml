@@ -34,7 +34,7 @@ jobs:
           node-version: "22"
       - name: 80 percent line coverage on changed backend files
         if: github.event_name == 'pull_request'
-        run: node scripts/coverage-changed.mjs "origin/${{ github.base_ref }}" backend/target/site/jacoco/jacoco.xml /dev/null
+        run: node scripts/coverage-changed.mjs "origin/${{ github.base_ref }}" backend/target/site/jacoco/jacoco.xml none
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -71,7 +71,7 @@ jobs:
       - name: 80 percent line coverage on changed frontend files
         if: github.event_name == 'pull_request'
         working-directory: .
-        run: node scripts/coverage-changed.mjs "origin/${{ github.base_ref }}" /dev/null frontend/coverage/frontend/coverage-final.json
+        run: node scripts/coverage-changed.mjs "origin/${{ github.base_ref }}" none frontend/coverage/frontend/coverage-final.json
       - name: Production build
         run: npm run build
       - uses: actions/upload-artifact@v4

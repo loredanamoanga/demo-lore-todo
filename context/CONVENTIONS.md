@@ -26,7 +26,9 @@ Read by every agent and every person before changing code. `context/DESIGN.md` o
 - Tests are written first, from the acceptance examples in `context/ACCEPTANCE.md` and the
   ticket's acceptance criteria; the code that makes them pass comes after the red bar.
 - 80 percent line coverage on the files a pull request changes, measured by
-  `scripts/coverage-changed.mjs` in CI, on top of the suite's own floors.
+  `scripts/coverage-changed.mjs` in CI, on top of the suite's own floors. Entry points are
+  exempt because they hold wiring and no logic: the Spring `*Application` class, Angular's
+  `main.ts` and `app.config.ts`. Nothing else is.
 - No TODO, FIXME or commented-out code left behind.
 - Persistence is tested against a real Postgres through Testcontainers. There is no H2 and no
   mocked repository in a test that exercises persistence.
