@@ -1,0 +1,17 @@
+# A Postgres for running the backend on a laptop. Tests never use it: they start their own with
+# Testcontainers.
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: demo-lore-todo-postgres
+    environment:
+      POSTGRES_DB: todo
+      POSTGRES_USER: todo
+      POSTGRES_PASSWORD: todo
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U todo -d todo"]
+      interval: 5s
+      timeout: 3s
+      retries: 20

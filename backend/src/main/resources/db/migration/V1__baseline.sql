@@ -1,0 +1,1 @@
+-- Baseline: the schema starts empty. Every change is a new versioned migration; old ones are never edited.

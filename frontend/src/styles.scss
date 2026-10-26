@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+@use './theme/theme-colors' as theme;
+
+// Design tokens from context/DESIGN.md. Components reference these, never raw hexes.
+:root {
+  --color-primary: #1f5493;
+  --color-header-bg: #005b4b;
+  --color-header-text: #ffffff;
+  --color-nav-bg: #171717;
+  --color-nav-text: #b5b5b5;
+  --color-nav-selected: #ffffff;
+  --color-nav-indicator: #9bf0e1;
+  --color-canvas: #f8f8f8;
+  --color-surface: #ffffff;
+  --color-text: #000000;
+  --color-text-subtle: #6e6e6e;
+  --color-ok: #1db954;
+  --color-error: #e22134;
+  --color-warning: #ff9800;
+  --color-running: #1f5493;
+  --color-border: #dddddd;
+}
+
+html {
+  color-scheme: light;
+  @include mat.theme(
+    (
+      color: (
+        primary: theme.$primary-palette,
+        tertiary: theme.$tertiary-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-text);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

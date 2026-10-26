@@ -1,0 +1,28 @@
+<mat-sidenav-container class="shell">
+  <mat-sidenav class="shell__nav" mode="side" opened disableClose>
+    <nav aria-label="Main navigation">
+      <a class="shell__nav-item shell__nav-item--selected" href="/" aria-current="page">
+        {{ navEntry }}
+      </a>
+    </nav>
+    <span class="shell__demo-badge" role="status">demo</span>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header class="shell__header">
+      <div>
+        <h1 class="shell__title">{{ pageTitle }}</h1>
+        <p class="shell__subtitle">{{ pageSubtitle }}</p>
+      </div>
+      <button mat-flat-button type="button" class="shell__primary-action">Add item</button>
+    </header>
+
+    <main class="shell__canvas">
+      <mat-card class="shell__card" appearance="outlined">
+        <mat-card-content>
+          <p class="shell__empty">No items yet. Add the first one.</p>
+        </mat-card-content>
+      </mat-card>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

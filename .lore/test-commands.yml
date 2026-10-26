@@ -1,0 +1,11 @@
+# Lore's test-command manifest: one entry per suite, each in its own directory. The factory's
+# TDD rounds run single tests through `run`; `list` enumerates them without running anything.
+# Paths in both are repository-relative.
+- cwd: backend
+  list: "python3 ../scripts/lore-test-list.py"
+  run: "bash ../scripts/lore-test-run.sh {selector}"
+  coverage_format: "json"
+- cwd: frontend
+  list: "node ../scripts/lore-vitest-list.mjs"
+  run: "bash ../scripts/lore-vitest-run.sh {selector}"
+  coverage_format: "lcov"
