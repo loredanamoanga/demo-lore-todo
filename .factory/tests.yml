@@ -1,2 +1,3 @@
-build: none
-tests: []
+tests:
+  - "tests/**"
+compile: npx playwright test --list
