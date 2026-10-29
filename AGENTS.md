@@ -11,10 +11,10 @@ stack defined in `context/ADR-001-stack.md` and the other files under `context/`
 - `.github/` holds repository metadata and issue/pull-request templates.
 
 ## Build and validation
-- The repository currently exposes docs and spec artifacts only; no application build files are
-  present in this branch.
-- When code is added, agents should follow the build and test commands documented in the repo's
-  context files and only compile the affected test sources here.
+- Nothing is built yet: the repository holds context and specs only, and `.factory/tests.yml` says
+  `build: none`.
+- The first story scaffolds the project and its test workspace from `context/ADR-001-stack.md`, and
+  replaces `build: none` with the real test globs and compile command.
 - Do not run full test suites in this environment.
 
 ## Style
