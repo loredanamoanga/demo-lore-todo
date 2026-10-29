@@ -1,0 +1,5 @@
+paths:
+  - {glob: "context/**", kind: doc}
+  - {glob: "spec/**", kind: spec}
+  - {glob: "openspec/**", kind: spec}
+  - {glob: ".github/**", kind: doc}

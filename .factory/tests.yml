@@ -1,0 +1,6 @@
+tests:
+  - "context/**"
+  - "spec/**"
+  - "openspec/**"
+  - ".github/ISSUE_TEMPLATE/**"
+compile: mvn -q -DskipTests test-compile
