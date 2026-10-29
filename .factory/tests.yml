@@ -1,2 +1,4 @@
-build: none
-tests: []
+build:
+  compile: npx tsc --noEmit
+tests:
+  - tests/**/*.test.ts

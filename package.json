@@ -1,0 +1,12 @@
+{
+  "name": "demo-lore-todo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "compile": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "typescript": "^5.9.3"
+  }
+}
